@@ -1,0 +1,2176 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "beego Test API",
+        "description": "beego has a very cool tools to autogenerate documents for your API",
+        "version": "1.0.0",
+        "termsOfService": "http://beego.me/",
+        "contact": {
+            "email": "astaxie@gmail.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "basePath": "/v1",
+    "paths": {
+        "/Login/": {
+            "post": {
+                "tags": [
+                    "Login"
+                ],
+                "description": "Login",
+                "operationId": "UsersController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Users"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Users"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/Register/": {
+            "post": {
+                "tags": [
+                    "Register"
+                ],
+                "description": "Registering Users",
+                "operationId": "RegisterController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for users content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Users"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Users"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addContractType/": {
+            "post": {
+                "tags": [
+                    "addContractType"
+                ],
+                "description": "create ContractType",
+                "operationId": "ContractTypeController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Contract content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ContractType"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.ContractType"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addDepartment/": {
+            "post": {
+                "tags": [
+                    "addDepartment"
+                ],
+                "description": "create Department",
+                "operationId": "DepartmentController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Department content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Department"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Department"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addDesignation/": {
+            "post": {
+                "tags": [
+                    "addDesignation"
+                ],
+                "description": "create Designation",
+                "operationId": "DesignationController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Designation content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Designation"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Designation"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addallocation/": {
+            "post": {
+                "tags": [
+                    "addallocation"
+                ],
+                "description": "create AttandanceAllocation",
+                "operationId": "AllocationController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Allocation content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Allocation"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Allocation"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addbook/": {
+            "post": {
+                "tags": [
+                    "addbook"
+                ],
+                "description": "create Book",
+                "operationId": "BookController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Book content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Book"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Book"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addbooksection/": {
+            "post": {
+                "tags": [
+                    "addbooksection"
+                ],
+                "description": "create BookSection",
+                "operationId": "BookSectionController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for BookSection content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.BookSection"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.BookSection"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addcourse/": {
+            "post": {
+                "tags": [
+                    "addcourse"
+                ],
+                "description": "Adding Course",
+                "operationId": "CourseController.Course",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Course"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.Course.Cid"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/adddivision/": {
+            "post": {
+                "tags": [
+                    "adddivision"
+                ],
+                "description": "Adding Divisions",
+                "operationId": "DivisionController.Division",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Division"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.Division.Did"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addpracticalallocation/": {
+            "post": {
+                "tags": [
+                    "addpracticalallocation"
+                ],
+                "description": "create PracticalAllocation",
+                "operationId": "PractAllocationController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for PracticalAllocation content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.PracticalAllocation"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.PracticalAllocation"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addprojectallocation/": {
+            "post": {
+                "tags": [
+                    "addprojectallocation"
+                ],
+                "description": "create ProjectAllocation",
+                "operationId": "ProjAllocationController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for ProjectAllocation content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.ProjectAllocation"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.ProjectAllocation"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addsubject/": {
+            "post": {
+                "tags": [
+                    "addsubject"
+                ],
+                "description": "create Subjects",
+                "operationId": "SubjectsController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Subject content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Subjects"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Subjects"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/addsubjectchoice/": {
+            "post": {
+                "tags": [
+                    "addsubjectchoice"
+                ],
+                "description": "create SubjectChoices of Students",
+                "operationId": "SubjectChoiceController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for StudentSubjectChoices content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.StudentSubjectChoices"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.StudentSubjectChoices"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/deletebook/{Bid}": {
+            "delete": {
+                "tags": [
+                    "deletebook"
+                ],
+                "description": "delete the Book",
+                "operationId": "BookDeleteController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Bid",
+                        "description": "The Bid you want to Book",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "Bid is empty"
+                    }
+                }
+            }
+        },
+        "/editbook/{Bid}": {
+            "put": {
+                "tags": [
+                    "editbook"
+                ],
+                "description": "update the Book",
+                "operationId": "BookEditController.Update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Nid",
+                        "description": "The Bid you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Book content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Book"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{Bid} models.Book"
+                    },
+                    "403": {
+                        "description": ":Bid is not int"
+                    }
+                }
+            }
+        },
+        "/finddivision/{Cid}": {
+            "get": {
+                "tags": [
+                    "finddivision"
+                ],
+                "description": "find Division by Cid",
+                "operationId": "DivisionViewController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Cid",
+                        "description": "the Cid you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Division"
+                        }
+                    },
+                    "403": {
+                        "description": ":Cid is empty"
+                    }
+                }
+            }
+        },
+        "/getContractType/": {
+            "get": {
+                "tags": [
+                    "getContractType"
+                ],
+                "description": "get all ContractType",
+                "operationId": "ContractTypeAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.ContractType"
+                        }
+                    }
+                }
+            }
+        },
+        "/getDepartment/": {
+            "get": {
+                "tags": [
+                    "getDepartment"
+                ],
+                "description": "get all Department",
+                "operationId": "DepartmentAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Department"
+                        }
+                    }
+                }
+            }
+        },
+        "/getDesignation/": {
+            "get": {
+                "tags": [
+                    "getDesignation"
+                ],
+                "description": "get all Designation",
+                "operationId": "DesignationAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Designation"
+                        }
+                    }
+                }
+            }
+        },
+        "/getallbooks/": {
+            "get": {
+                "tags": [
+                    "getallbooks"
+                ],
+                "description": "get Book",
+                "operationId": "BookSController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Book"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/getallocation/": {
+            "get": {
+                "tags": [
+                    "getallocation"
+                ],
+                "description": "get all Allocation",
+                "operationId": "AllocationAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "{Allocation} models.Allocation"
+                    }
+                }
+            }
+        },
+        "/getcourse/": {
+            "get": {
+                "tags": [
+                    "getcourse"
+                ],
+                "description": "get all Course",
+                "operationId": "CourseAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "{Course} models.Course"
+                    }
+                }
+            }
+        },
+        "/getdivision/": {
+            "get": {
+                "tags": [
+                    "getdivision"
+                ],
+                "description": "get all Division",
+                "operationId": "DivisionAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "{Division} models.Division"
+                    }
+                }
+            }
+        },
+        "/getnotice/": {
+            "get": {
+                "tags": [
+                    "getnotice"
+                ],
+                "description": "get all Notice",
+                "operationId": "NoticeAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Notice"
+                        }
+                    }
+                }
+            }
+        },
+        "/getnoticeType/": {
+            "get": {
+                "tags": [
+                    "getnoticeType"
+                ],
+                "description": "get all NoticeType",
+                "operationId": "NoticeTypeAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.NoticeType"
+                        }
+                    }
+                }
+            }
+        },
+        "/getpracticalallocation/": {
+            "get": {
+                "tags": [
+                    "getpracticalallocation"
+                ],
+                "description": "get all PracticalAllocation",
+                "operationId": "PracticalAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "{PracticalAllocation} models.PracticalAllocation"
+                    }
+                }
+            }
+        },
+        "/getprojectallocation/": {
+            "get": {
+                "tags": [
+                    "getprojectallocation"
+                ],
+                "description": "get all ProjectAllocation",
+                "operationId": "ProjectAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "{ProjectAllocation} models.ProjectAllocation"
+                    }
+                }
+            }
+        },
+        "/getstaffmember/": {
+            "get": {
+                "tags": [
+                    "getstaffmember"
+                ],
+                "description": "get all Staff",
+                "operationId": "StaffMemberAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.StaffMember"
+                        }
+                    }
+                }
+            }
+        },
+        "/getstudentdetails/": {
+            "get": {
+                "tags": [
+                    "getstudentdetails"
+                ],
+                "description": "get all StudentDetails",
+                "operationId": "StudentAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "{StudentDetails} models.StudentDetails"
+                    }
+                }
+            }
+        },
+        "/newnotice/": {
+            "post": {
+                "tags": [
+                    "newnotice"
+                ],
+                "description": "create Notice",
+                "operationId": "NoticeController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for Notice content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Notice"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.Notice"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/newnoticeType/": {
+            "post": {
+                "tags": [
+                    "newnoticeType"
+                ],
+                "description": "create NoticeType",
+                "operationId": "NoticeTypeController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for NoticeType content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.NoticeType"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.NoticeType"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/notice/{Nid}": {
+            "get": {
+                "tags": [
+                    "notice"
+                ],
+                "description": "find Notice by Nid",
+                "operationId": "NoticeViewController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Nid",
+                        "description": "the Nid you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Notice"
+                        }
+                    },
+                    "403": {
+                        "description": ":Nid is empty"
+                    }
+                }
+            }
+        },
+        "/noticeS/": {
+            "get": {
+                "tags": [
+                    "noticeS"
+                ],
+                "description": "get Notice",
+                "operationId": "NoticeSController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Notice"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/noticeSearch/": {
+            "post": {
+                "tags": [
+                    "noticeSearch"
+                ],
+                "description": "Searching Notice",
+                "operationId": "NoticeSearchController.NoticeSearch",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for notice content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Notice"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.Notice.Nid"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/noticeType/{Ntid}": {
+            "get": {
+                "tags": [
+                    "noticeType"
+                ],
+                "description": "find NoticeType by Ntid",
+                "operationId": "NoticeTypeViewController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Ntid",
+                        "description": "the Ntid you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.NoticeType"
+                        }
+                    },
+                    "403": {
+                        "description": ":Ntid is empty"
+                    }
+                }
+            }
+        },
+        "/noticeTypeDelete/{Ntid}": {
+            "delete": {
+                "tags": [
+                    "noticeTypeDelete"
+                ],
+                "description": "delete the NoticeType",
+                "operationId": "NoticeTypeDeleteController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Ntid",
+                        "description": "The Ntid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "Ntid is empty"
+                    }
+                }
+            }
+        },
+        "/noticeTypeEdit/{Ntid}": {
+            "put": {
+                "tags": [
+                    "noticeTypeEdit"
+                ],
+                "description": "update the NoticeType",
+                "operationId": "NoticeTypeEditController.Update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Ntid",
+                        "description": "The Ntid you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for notice content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.NoticeType"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{Ntid} models.NoticeType"
+                    },
+                    "403": {
+                        "description": ":Ntid is not int"
+                    }
+                }
+            }
+        },
+        "/noticedelete/{Nid}": {
+            "delete": {
+                "tags": [
+                    "noticedelete"
+                ],
+                "description": "delete the Notice",
+                "operationId": "NoticeDeleteController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Nid",
+                        "description": "The Nid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "Nid is empty"
+                    }
+                }
+            }
+        },
+        "/noticeedit/{Nid}": {
+            "put": {
+                "tags": [
+                    "noticeedit"
+                ],
+                "description": "update the Notice",
+                "operationId": "NoticeEditController.Update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Nid",
+                        "description": "The Nid you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for notice content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.Notice"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{Nid} models.Notice"
+                    },
+                    "403": {
+                        "description": ":Nid is not int"
+                    }
+                }
+            }
+        },
+        "/practical/{Did}": {
+            "get": {
+                "tags": [
+                    "practical"
+                ],
+                "description": "find RollNumber of Student by Did",
+                "operationId": "PracticalViewController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Did",
+                        "description": "the Did you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.StudentDetails"
+                        }
+                    },
+                    "403": {
+                        "description": ":Did is empty"
+                    }
+                }
+            }
+        },
+        "/staff/{StaffId}": {
+            "get": {
+                "tags": [
+                    "staff"
+                ],
+                "description": "find Staff by StaffId",
+                "operationId": "StaffMemberViewController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "StaffId",
+                        "description": "the StaffId you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.StaffMember"
+                        }
+                    },
+                    "403": {
+                        "description": ":StaffId is empty"
+                    }
+                }
+            }
+        },
+        "/staffdetails/": {
+            "post": {
+                "tags": [
+                    "staffdetails"
+                ],
+                "description": "create StaffMember",
+                "operationId": "StaffMemberController.Post",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for StaffMember content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.StaffMember"
+                        }
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "{int} models.StaffMember"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/staffmemberGetAll/": {
+            "get": {
+                "tags": [
+                    "staffmemberGetAll"
+                ],
+                "description": "get StaffMember",
+                "operationId": "StaffMemberSController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.StaffMember"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/staffmemberdelete/{StaffId}": {
+            "delete": {
+                "tags": [
+                    "staffmemberdelete"
+                ],
+                "description": "delete the StaffMember",
+                "operationId": "StaffMemberDeleteController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Sid",
+                        "description": "The StaffId you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "StaffId is empty"
+                    }
+                }
+            }
+        },
+        "/staffmemberedit/{StaffId}": {
+            "put": {
+                "tags": [
+                    "staffmemberedit"
+                ],
+                "description": "update the StaffMember",
+                "operationId": "StaffMemberEditController.Update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Sid",
+                        "description": "The StaffId you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for staff content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.StaffMember"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{StaffId} models.StaffMember"
+                    },
+                    "403": {
+                        "description": ":StaffId is not int"
+                    }
+                }
+            }
+        },
+        "/student/{Sid}": {
+            "get": {
+                "tags": [
+                    "student"
+                ],
+                "description": "find Student by Sid",
+                "operationId": "StudentViewController.Get",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Sid",
+                        "description": "the Sid you want to get",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.StudentDetails"
+                        }
+                    },
+                    "403": {
+                        "description": ":Sid is empty"
+                    }
+                }
+            }
+        },
+        "/studentDelete/{Sid}": {
+            "delete": {
+                "tags": [
+                    "studentDelete"
+                ],
+                "description": "delete the Student",
+                "operationId": "StudentDeleteController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Sid",
+                        "description": "The Sid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "Sid is empty"
+                    }
+                }
+            }
+        },
+        "/studentEdit/{Sid}": {
+            "put": {
+                "tags": [
+                    "studentEdit"
+                ],
+                "description": "update the Student",
+                "operationId": "StudentEditController.Update",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Sid",
+                        "description": "The Sid you want to update",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for student content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.StudentDetails"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{Sid} models.StudentDetails"
+                    },
+                    "403": {
+                        "description": ":Sid is not int"
+                    }
+                }
+            }
+        },
+        "/studentGetAll/": {
+            "get": {
+                "tags": [
+                    "studentGetAll"
+                ],
+                "description": "get StudentDetails",
+                "operationId": "StudentSController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.StudentDetails"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/studentSearch/": {
+            "post": {
+                "tags": [
+                    "studentSearch"
+                ],
+                "description": "Searching Student",
+                "operationId": "StudentSearchController.Student",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.StudentDetails"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.StudentDetails.Sid"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        },
+        "/studentdetails/": {
+            "post": {
+                "tags": [
+                    "studentdetails"
+                ],
+                "description": "Adding Student",
+                "operationId": "StudentController.Student",
+                "parameters": [
+                    {
+                        "in": "body",
+                        "name": "body",
+                        "description": "body for user content",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/models.StudentDetails"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{int} models.StudentDetails.Sid"
+                    },
+                    "403": {
+                        "description": "body is empty"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "models.Allocation": {
+            "title": "Allocation",
+            "type": "object",
+            "properties": {
+                "Aaid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "AcademicYear": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "AllocatedAt": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "AllocatedBy": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Division": {
+                    "$ref": "#/definitions/models.Division"
+                },
+                "Semester": {
+                    "type": "string"
+                },
+                "SessionNumbers": {
+                    "type": "string"
+                },
+                "StaffMember": {
+                    "$ref": "#/definitions/models.StaffMember"
+                },
+                "Status": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Subjects": {
+                    "$ref": "#/definitions/models.Subjects"
+                }
+            }
+        },
+        "models.Book": {
+            "title": "Book",
+            "type": "object",
+            "properties": {
+                "Author": {
+                    "type": "string"
+                },
+                "Bid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "BookName": {
+                    "type": "string"
+                },
+                "BookSection": {
+                    "$ref": "#/definitions/models.BookSection"
+                },
+                "Classification": {
+                    "type": "string"
+                },
+                "Edition": {
+                    "type": "string"
+                },
+                "Isbn": {
+                    "type": "string"
+                },
+                "PublishPlace": {
+                    "type": "string"
+                },
+                "PublishYear": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Publisher": {
+                    "type": "string"
+                },
+                "TotalPages": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.BookSection": {
+            "title": "BookSection",
+            "type": "object",
+            "properties": {
+                "Bsid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SectionName": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.ContractType": {
+            "title": "ContractType",
+            "type": "object",
+            "properties": {
+                "Cid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ContractName": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Course": {
+            "title": "Course",
+            "type": "object",
+            "properties": {
+                "Cid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "CourseFullName": {
+                    "type": "string"
+                },
+                "CourseShortName": {
+                    "type": "string"
+                },
+                "CourseType": {
+                    "type": "string"
+                },
+                "RollPrefix": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Department": {
+            "title": "Department",
+            "type": "object",
+            "properties": {
+                "DepartmentName": {
+                    "type": "string"
+                },
+                "Depid": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.Designation": {
+            "title": "Designation",
+            "type": "object",
+            "properties": {
+                "DesignationName": {
+                    "type": "string"
+                },
+                "Dsid": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.Division": {
+            "title": "Division",
+            "type": "object",
+            "properties": {
+                "Course": {
+                    "$ref": "#/definitions/models.Course"
+                },
+                "Did": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "DivisionName": {
+                    "type": "string"
+                },
+                "YearClass": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Notice": {
+            "title": "Notice",
+            "type": "object",
+            "properties": {
+                "Nid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "NoticeContent": {
+                    "type": "string"
+                },
+                "NoticeCreatedAt": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "NoticeTitle": {
+                    "type": "string"
+                },
+                "NoticeType": {
+                    "$ref": "#/definitions/models.NoticeType"
+                }
+            }
+        },
+        "models.NoticeType": {
+            "title": "NoticeType",
+            "type": "object",
+            "properties": {
+                "NoticeTypeName": {
+                    "type": "string"
+                },
+                "Ntid": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.PracticalAllocation": {
+            "title": "PracticalAllocation",
+            "type": "object",
+            "properties": {
+                "AcademicYear": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "AllocatedAt": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "AllocatedBy": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Batch": {
+                    "type": "string"
+                },
+                "Division": {
+                    "$ref": "#/definitions/models.Division"
+                },
+                "Prid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "RollNo": {
+                    "type": "string"
+                },
+                "Semester": {
+                    "type": "string"
+                },
+                "SessionNumbers": {
+                    "type": "string"
+                },
+                "StaffMember": {
+                    "$ref": "#/definitions/models.StaffMember"
+                },
+                "Status": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Subjects": {
+                    "$ref": "#/definitions/models.Subjects"
+                }
+            }
+        },
+        "models.ProjectAllocation": {
+            "title": "ProjectAllocation",
+            "type": "object",
+            "properties": {
+                "AcademicYear": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "AllocatedAt": {
+                    "type": "string",
+                    "format": "string"
+                },
+                "AllocatedBy": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Paid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ProjectCode": {
+                    "type": "string"
+                },
+                "RollNo": {
+                    "type": "string"
+                },
+                "SessionNumbers": {
+                    "type": "string"
+                },
+                "StaffMember": {
+                    "$ref": "#/definitions/models.StaffMember"
+                },
+                "Status": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "projectName": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.StaffMember": {
+            "title": "StaffMember",
+            "type": "object",
+            "properties": {
+                "Active": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Address": {
+                    "type": "string"
+                },
+                "BloodGroup": {
+                    "type": "string"
+                },
+                "ContactNumber": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "ContractType": {
+                    "$ref": "#/definitions/models.ContractType"
+                },
+                "DateOfBirth": {
+                    "type": "string"
+                },
+                "DateOfJoining": {
+                    "type": "string"
+                },
+                "Department": {
+                    "$ref": "#/definitions/models.Department"
+                },
+                "Designation": {
+                    "$ref": "#/definitions/models.Designation"
+                },
+                "EducationQualification": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "EmergencyContactName": {
+                    "type": "string"
+                },
+                "EmergencyContactNumber": {
+                    "type": "string"
+                },
+                "EmergencyContactRelationship": {
+                    "type": "string"
+                },
+                "FirstName": {
+                    "type": "string"
+                },
+                "Gender": {
+                    "type": "string"
+                },
+                "LastName": {
+                    "type": "string"
+                },
+                "MiddleName": {
+                    "type": "string"
+                },
+                "Salary": {
+                    "type": "string"
+                },
+                "Salutation": {
+                    "type": "string"
+                },
+                "StaffCode": {
+                    "type": "string"
+                },
+                "StaffId": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Status": {
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "Userid": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.StudentDetails": {
+            "title": "StudentDetails",
+            "type": "object",
+            "properties": {
+                "AccountNumber": {
+                    "type": "string"
+                },
+                "AdmissionYear": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "BankName": {
+                    "type": "string"
+                },
+                "BloodGroup": {
+                    "type": "string"
+                },
+                "BranchAddress": {
+                    "type": "string"
+                },
+                "Category": {
+                    "type": "string"
+                },
+                "CoCurricularActivities": {
+                    "type": "string"
+                },
+                "Course": {
+                    "$ref": "#/definitions/models.Course"
+                },
+                "Division": {
+                    "$ref": "#/definitions/models.Division"
+                },
+                "Dob": {
+                    "type": "string"
+                },
+                "Email": {
+                    "type": "string"
+                },
+                "ExtraCurricularActivities": {
+                    "type": "string"
+                },
+                "FatherName": {
+                    "type": "string"
+                },
+                "FatherOccupation": {
+                    "type": "string"
+                },
+                "FatherStatus": {
+                    "type": "string"
+                },
+                "FirstName": {
+                    "type": "string"
+                },
+                "Gender": {
+                    "type": "string"
+                },
+                "GuardianAddress": {
+                    "type": "string"
+                },
+                "GuardianName": {
+                    "type": "string"
+                },
+                "GuardianOccupation": {
+                    "type": "string"
+                },
+                "GuardianRelation": {
+                    "type": "string"
+                },
+                "HsscBoard": {
+                    "type": "string"
+                },
+                "HsscClassObtained": {
+                    "type": "string"
+                },
+                "HsscMarkOutOf": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "HsscMonthOfPassing": {
+                    "type": "string"
+                },
+                "HsscPercentage": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "HsscSeatNo": {
+                    "type": "string"
+                },
+                "HsscStream": {
+                    "type": "string"
+                },
+                "HsscTotalMarks": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "HsscYearOfPassing": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "LandLineNumber": {
+                    "type": "string"
+                },
+                "LastName": {
+                    "type": "string"
+                },
+                "MaritalStatus": {
+                    "type": "string"
+                },
+                "MiddleName": {
+                    "type": "string"
+                },
+                "MobileNumber": {
+                    "type": "string"
+                },
+                "MotherName": {
+                    "type": "string"
+                },
+                "MotherOccupation": {
+                    "type": "string"
+                },
+                "MotherStatus": {
+                    "type": "string"
+                },
+                "Nationality": {
+                    "type": "string"
+                },
+                "ParentEmail": {
+                    "type": "string"
+                },
+                "ParentMobileNumber": {
+                    "type": "string"
+                },
+                "PlaceOfBirth": {
+                    "type": "string"
+                },
+                "RegistrationId": {
+                    "type": "string"
+                },
+                "Religon": {
+                    "type": "string"
+                },
+                "ResidentialAddress": {
+                    "type": "string"
+                },
+                "RollNo": {
+                    "type": "string"
+                },
+                "Scholorship": {
+                    "type": "string"
+                },
+                "Semester": {
+                    "type": "string"
+                },
+                "SiblingName": {
+                    "type": "string"
+                },
+                "Sid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SportsLevelOfParticipation": {
+                    "type": "string"
+                },
+                "SportsName": {
+                    "type": "string"
+                },
+                "SscBoard": {
+                    "type": "string"
+                },
+                "SscClassObtained": {
+                    "type": "string"
+                },
+                "SscMarkOutOf": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SscMonthOfPassing": {
+                    "type": "string"
+                },
+                "SscPercentage": {
+                    "type": "number",
+                    "format": "double"
+                },
+                "SscSeatNo": {
+                    "type": "string"
+                },
+                "SscTotalMarks": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SscYearOfPassing": {
+                    "type": "integer",
+                    "format": "int64"
+                }
+            }
+        },
+        "models.StudentSubjectChoices": {
+            "title": "StudentSubjectChoices",
+            "type": "object",
+            "properties": {
+                "AcademicYear": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Course": {
+                    "$ref": "#/definitions/models.Course"
+                },
+                "Scid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Semester": {
+                    "type": "string"
+                },
+                "StudentDetails": {
+                    "$ref": "#/definitions/models.StudentDetails"
+                },
+                "Subjects": {
+                    "$ref": "#/definitions/models.Subjects"
+                }
+            }
+        },
+        "models.Subjects": {
+            "title": "Subjects",
+            "type": "object",
+            "properties": {
+                "Compulsory": {
+                    "type": "string"
+                },
+                "Course": {
+                    "$ref": "#/definitions/models.Course"
+                },
+                "Semester": {
+                    "type": "string"
+                },
+                "Subid": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "SubjectCode": {
+                    "type": "string"
+                },
+                "SubjectName": {
+                    "type": "string"
+                }
+            }
+        },
+        "models.Users": {
+            "title": "Users",
+            "type": "object",
+            "properties": {
+                "Active": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Designation": {
+                    "type": "string"
+                },
+                "FkidUserStaffid": {
+                    "description": "Staff fkid from staff_member table",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "FkidUserStudentid": {
+                    "description": "primark key from student_personal_details",
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "Password": {
+                    "type": "string"
+                },
+                "RId": {
+                    "type": "string"
+                },
+                "Roles": {
+                    "type": "string"
+                },
+                "UserType": {
+                    "description": "1- Student2- Staff3- Superadmin; 4-Notice Board",
+                    "type": "integer",
+                    "format": "int32"
+                },
+                "Username": {
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Login",
+            "description": "UsersController operations for Users\n"
+        },
+        {
+            "name": "studentdetails",
+            "description": "Operations about Student\n"
+        },
+        {
+            "name": "getstudentdetails",
+            "description": "Operations about Student\n"
+        },
+        {
+            "name": "student",
+            "description": "Operations about Student\n"
+        },
+        {
+            "name": "studentEdit",
+            "description": "Operations about Student\n"
+        },
+        {
+            "name": "studentDelete",
+            "description": "Operations about Student\n"
+        }
+    ]
+}
