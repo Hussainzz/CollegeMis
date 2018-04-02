@@ -13,7 +13,7 @@
             "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
         }
     },
-    "basePath": "/v1",
+    "basePath": "/api/v1",
     "paths": {
         "/Login/": {
             "post": {
@@ -407,6 +407,142 @@
                 }
             }
         },
+        "/allocationGetAll/": {
+            "get": {
+                "tags": [
+                    "allocationGetAll"
+                ],
+                "description": "get Book",
+                "operationId": "AllocationAllController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Allocation"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/deleteAllocation/{Aaid}": {
+            "delete": {
+                "tags": [
+                    "deleteAllocation"
+                ],
+                "description": "delete the allocation",
+                "operationId": "DeleteAllocationController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Aaid",
+                        "description": "The Nid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "Aaid is empty"
+                    }
+                }
+            }
+        },
+        "/deletePracticalAllocation/{Prid}": {
+            "delete": {
+                "tags": [
+                    "deletePracticalAllocation"
+                ],
+                "description": "delete the practicalallocation",
+                "operationId": "PracticalDeleteController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Prid",
+                        "description": "The Prid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "Prid is empty"
+                    }
+                }
+            }
+        },
+        "/deleteProject/{Paid}": {
+            "delete": {
+                "tags": [
+                    "deleteProject"
+                ],
+                "description": "delete the projectallocation",
+                "operationId": "ProjectDeleteController.Delete",
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "Paid",
+                        "description": "The Paid you want to delete",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "{string} delete success!"
+                    },
+                    "403": {
+                        "description": "Paid is empty"
+                    }
+                }
+            }
+        },
         "/deletebook/{Bid}": {
             "delete": {
                 "tags": [
@@ -493,6 +629,180 @@
                     },
                     "403": {
                         "description": ":Cid is empty"
+                    }
+                }
+            }
+        },
+        "/getAllPractical/": {
+            "get": {
+                "tags": [
+                    "getAllPractical"
+                ],
+                "description": "get PracticalAllocation",
+                "operationId": "PracticalSAllController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.PracticalAllocation"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/getAllProject/": {
+            "get": {
+                "tags": [
+                    "getAllProject"
+                ],
+                "description": "get ProjectAllocation",
+                "operationId": "ProjectSAllController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.ProjectAllocation"
+                        }
+                    },
+                    "403": {
+                        "description": ""
+                    }
+                }
+            }
+        },
+        "/getAllSections/": {
+            "get": {
+                "tags": [
+                    "getAllSections"
+                ],
+                "description": "get Book",
+                "operationId": "BookSectionSController.Get All",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "query",
+                        "description": "Filter. e.g. col1:v1,col2:v2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "fields",
+                        "description": "Fields returned. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "sortby",
+                        "description": "Sorted-by fields. e.g. col1,col2 ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "order",
+                        "description": "Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ...",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "limit",
+                        "description": "Limit the size of result set. Must be an integer",
+                        "type": "string"
+                    },
+                    {
+                        "in": "query",
+                        "name": "offset",
+                        "description": "Start position of result set. Must be an integer",
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Book"
+                        }
+                    },
+                    "403": {
+                        "description": ""
                     }
                 }
             }
@@ -602,20 +912,6 @@
                     },
                     "403": {
                         "description": ""
-                    }
-                }
-            }
-        },
-        "/getallocation/": {
-            "get": {
-                "tags": [
-                    "getallocation"
-                ],
-                "description": "get all Allocation",
-                "operationId": "AllocationAllController.GetAll",
-                "responses": {
-                    "200": {
-                        "description": "{Allocation} models.Allocation"
                     }
                 }
             }
@@ -737,6 +1033,40 @@
                 "responses": {
                     "200": {
                         "description": "{StudentDetails} models.StudentDetails"
+                    }
+                }
+            }
+        },
+        "/getsubject/": {
+            "get": {
+                "tags": [
+                    "getsubject"
+                ],
+                "description": "get all Subjects",
+                "operationId": "SubjectsAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.Subjects"
+                        }
+                    }
+                }
+            }
+        },
+        "/getsubjectchoice/": {
+            "get": {
+                "tags": [
+                    "getsubjectchoice"
+                ],
+                "description": "get all SubjectsChoice",
+                "operationId": "SubjectsCAllController.GetAll",
+                "responses": {
+                    "200": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/models.StudentSubjectChoices"
+                        }
                     }
                 }
             }

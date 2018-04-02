@@ -10,11 +10,10 @@ import (
 )
 func init() {
 	beego.InsertFilter("*", beego.BeforeRouter, cors.Allow(&cors.Options{
-		AllowOrigins:     []string{"*"},
-		AllowMethods:     []string{"*"},
-		AllowHeaders:     []string{"Origin", "Content-Type"},
-		ExposeHeaders:    []string{"Content-Length"},
-		AllowCredentials: true,
+		AllowAllOrigins:  true /* []string{"*"} */,
+		AllowMethods:     []string{"GET", "DELETE", "PUT", "PATCH", "POST","OPTIONS"},
+		AllowHeaders:     []string{"Origin", "Authorization", "Access-Control-Allow-Origin"},
+		ExposeHeaders:    []string{"Content-Length","Access-Control-Allow-Origin"},
 	  }))	
 	
 	  orm.RegisterDriver("mysql", orm.DRMySQL)

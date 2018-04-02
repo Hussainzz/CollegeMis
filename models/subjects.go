@@ -69,3 +69,17 @@ func AddingStudentSubjectChoice(sub *StudentSubjectChoices) (string, error){
 	success = "Student Subject Choice Added Successfully"
 	return success, nil
 }
+
+/*
+func (subjectchoices StudentSubjectChoices) GetAllSubjectChoices() (ret []StudentSubjectChoices) {
+	o := orm.NewOrm()
+	o.QueryTable("subjectchoices").RelatedSel().OrderBy("-Scid").All(&ret)
+	return
+}
+*/
+
+func (subjectchoices StudentSubjectChoices) GetAllSubjectChoices() (ret []StudentSubjectChoices){
+	o := orm.NewOrm()
+	o.QueryTable("student_subject_choices").RelatedSel().OrderBy("-Scid").All(&ret)
+	return
+}

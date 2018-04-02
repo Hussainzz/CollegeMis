@@ -99,3 +99,22 @@ func (r *SubjectChoiceController) Post(){
 	}
 	r.ServeJSON()
 }
+
+type SubjectChoiceAController struct {
+	beego.Controller
+}
+
+type SubjectsCAllController struct{
+	beego.Controller
+}
+// @Title GetAll
+// @Description get all SubjectsChoice
+// @Success 200 {object} models.StudentSubjectChoices
+// @router / [get]
+func(nn *SubjectsCAllController) Get(){
+	subjectsC := &models.StudentSubjectChoices{}
+	n := subjectsC.GetAllSubjectChoices()
+	nn.Data["json"] = n
+	nn.ServeJSON()
+}
+

@@ -14,7 +14,7 @@ import (
 )
 
 func init() {
-	ns := beego.NewNamespace("/v1",
+	ns := beego.NewNamespace("/api/v1",
 
 		beego.NSNamespace("/Login",
 			beego.NSInclude(
@@ -99,6 +99,17 @@ func init() {
 			beego.NSInclude(
 				&controllers.SubjectChoiceController{},
 			),
+		),
+		beego.NSNamespace("/getsubject",
+			beego.NSInclude(
+				&controllers.SubjectsAllController{},
+			),
+		),
+	
+		beego.NSNamespace("/getsubjectchoice",
+			beego.NSInclude(
+					&controllers.SubjectsCAllController{},
+			),	
 		),
 
 
@@ -231,9 +242,14 @@ func init() {
 				&controllers.AllocationController{},
 			),
 		),
-		beego.NSNamespace("/getallocation",
+		beego.NSNamespace("/allocationGetAll",
 			beego.NSInclude(
 				&controllers.AllocationAllController{},
+			),
+		),
+		beego.NSNamespace("/deleteAllocation",
+			beego.NSInclude(
+				&controllers.DeleteAllocationController{},
 			),
 		),
 
@@ -245,6 +261,23 @@ func init() {
 		beego.NSNamespace("/getprojectallocation",
 			beego.NSInclude(
 				&controllers.ProjectAllController{},
+			),
+		),
+		beego.NSNamespace("/getAllProject",
+			beego.NSInclude(
+				&controllers.ProjectSAllController{},
+			),
+		),
+
+		beego.NSNamespace("/deleteProject",
+			beego.NSInclude(
+				&controllers.ProjectDeleteController{},	
+			),
+		),
+		
+		beego.NSNamespace("/getAllPractical",
+			beego.NSInclude(
+				&controllers.PracticalSAllController{},
 			),
 		),
 
@@ -263,11 +296,22 @@ func init() {
 				&controllers.PracticalViewController{},
 			),
 		),
+		beego.NSNamespace("/deletePracticalAllocation",
+			beego.NSInclude(
+				&controllers.PracticalDeleteController{},
+			),
+		),
+		
 
 		//--------------Library Module----------------
 		beego.NSNamespace("/addbooksection",
 			beego.NSInclude(
 				&controllers.BookSectionController{},
+			),
+		),
+		beego.NSNamespace("/getAllSections",
+			beego.NSInclude(
+				&controllers.BookSectionSController{},
 			),
 		),
 		beego.NSNamespace("/addbook",
