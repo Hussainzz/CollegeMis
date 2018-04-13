@@ -63,11 +63,43 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
+	beego.GlobalControllerRouter["CollegeMis/controllers:BookSectionDeleteController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:BookSectionDeleteController"],
+		beego.ControllerComments{
+			Method: "Delete",
+			Router: `/:Bsid`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:BookSectionEditController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:BookSectionEditController"],
+		beego.ControllerComments{
+			Method: "Put",
+			Router: `/:Bsid`,
+			AllowHTTPMethods: []string{"put"},
+			MethodParams: param.Make(),
+			Params: nil})
+
 	beego.GlobalControllerRouter["CollegeMis/controllers:BookSectionSController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:BookSectionSController"],
 		beego.ControllerComments{
 			Method: "GetAll",
 			Router: `/`,
 			AllowHTTPMethods: []string{"get"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:ContractDeleteController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:ContractDeleteController"],
+		beego.ControllerComments{
+			Method: "Delete",
+			Router: `/:Cid`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:ContractEditController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:ContractEditController"],
+		beego.ControllerComments{
+			Method: "Put",
+			Router: `/:Cid`,
+			AllowHTTPMethods: []string{"put"},
 			MethodParams: param.Make(),
 			Params: nil})
 
@@ -103,6 +135,22 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
+	beego.GlobalControllerRouter["CollegeMis/controllers:CourseDeleteController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:CourseDeleteController"],
+		beego.ControllerComments{
+			Method: "Delete",
+			Router: `/:Cid`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:CourseEditController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:CourseEditController"],
+		beego.ControllerComments{
+			Method: "Put",
+			Router: `/:Cid`,
+			AllowHTTPMethods: []string{"put"},
+			MethodParams: param.Make(),
+			Params: nil})
+
 	beego.GlobalControllerRouter["CollegeMis/controllers:DeleteAllocationController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DeleteAllocationController"],
 		beego.ControllerComments{
 			Method: "Delete",
@@ -127,6 +175,22 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
+	beego.GlobalControllerRouter["CollegeMis/controllers:DepartmentDeleteController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DepartmentDeleteController"],
+		beego.ControllerComments{
+			Method: "Delete",
+			Router: `/:Depid`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:DepartmentEditController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DepartmentEditController"],
+		beego.ControllerComments{
+			Method: "Put",
+			Router: `/:Depid`,
+			AllowHTTPMethods: []string{"put"},
+			MethodParams: param.Make(),
+			Params: nil})
+
 	beego.GlobalControllerRouter["CollegeMis/controllers:DesignationAllController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DesignationAllController"],
 		beego.ControllerComments{
 			Method: "Get",
@@ -143,6 +207,22 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
+	beego.GlobalControllerRouter["CollegeMis/controllers:DesignationDeleteController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DesignationDeleteController"],
+		beego.ControllerComments{
+			Method: "Delete",
+			Router: `/:Dsid`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:DesignationEditController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DesignationEditController"],
+		beego.ControllerComments{
+			Method: "Put",
+			Router: `/:Dsid`,
+			AllowHTTPMethods: []string{"put"},
+			MethodParams: param.Make(),
+			Params: nil})
+
 	beego.GlobalControllerRouter["CollegeMis/controllers:DivisionAllController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DivisionAllController"],
 		beego.ControllerComments{
 			Method: "Get",
@@ -156,6 +236,22 @@ func init() {
 			Method: "Post",
 			Router: `/`,
 			AllowHTTPMethods: []string{"post"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:DivisionDeleteController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DivisionDeleteController"],
+		beego.ControllerComments{
+			Method: "Delete",
+			Router: `/:Did`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:DivisionEditController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:DivisionEditController"],
+		beego.ControllerComments{
+			Method: "Put",
+			Router: `/:Did`,
+			AllowHTTPMethods: []string{"put"},
 			MethodParams: param.Make(),
 			Params: nil})
 
@@ -455,6 +551,14 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
+	beego.GlobalControllerRouter["CollegeMis/controllers:SubjectChoiceAllController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:SubjectChoiceAllController"],
+		beego.ControllerComments{
+			Method: "GetAll",
+			Router: `/`,
+			AllowHTTPMethods: []string{"get"},
+			MethodParams: param.Make(),
+			Params: nil})
+
 	beego.GlobalControllerRouter["CollegeMis/controllers:SubjectChoiceController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:SubjectChoiceController"],
 		beego.ControllerComments{
 			Method: "Post",
@@ -463,15 +567,31 @@ func init() {
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["CollegeMis/controllers:SubjectsAllController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:SubjectsAllController"],
+	beego.GlobalControllerRouter["CollegeMis/controllers:SubjectChoiceDeleteController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:SubjectChoiceDeleteController"],
 		beego.ControllerComments{
-			Method: "Get",
-			Router: `/`,
-			AllowHTTPMethods: []string{"get"},
+			Method: "Delete",
+			Router: `/:Scid`,
+			AllowHTTPMethods: []string{"delete"},
 			MethodParams: param.Make(),
 			Params: nil})
 
-	beego.GlobalControllerRouter["CollegeMis/controllers:SubjectsCAllController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:SubjectsCAllController"],
+	beego.GlobalControllerRouter["CollegeMis/controllers:SubjectDeleteController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:SubjectDeleteController"],
+		beego.ControllerComments{
+			Method: "Delete",
+			Router: `/:Subid`,
+			AllowHTTPMethods: []string{"delete"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:SubjectEditController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:SubjectEditController"],
+		beego.ControllerComments{
+			Method: "Put",
+			Router: `/:Subid`,
+			AllowHTTPMethods: []string{"put"},
+			MethodParams: param.Make(),
+			Params: nil})
+
+	beego.GlobalControllerRouter["CollegeMis/controllers:SubjectsAllController"] = append(beego.GlobalControllerRouter["CollegeMis/controllers:SubjectsAllController"],
 		beego.ControllerComments{
 			Method: "Get",
 			Router: `/`,

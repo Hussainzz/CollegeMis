@@ -6,6 +6,9 @@ import (
 	"encoding/json"
 	"strconv"
 	"github.com/astaxie/beego/orm"
+	"strings"
+	"errors"
+	"fmt"
 
 )
 
@@ -100,21 +103,154 @@ func (r *SubjectChoiceController) Post(){
 	r.ServeJSON()
 }
 
-type SubjectChoiceAController struct {
+type SubjectChoiceAllController struct {
 	beego.Controller
 }
 
-type SubjectsCAllController struct{
+// GetAll ...
+// @Title Get All
+// @Description get SubjectChoices
+// @Param	query	query	string	false	"Filter. e.g. col1:v1,col2:v2 ..."
+// @Param	fields	query	string	false	"Fields returned. e.g. col1,col2 ..."
+// @Param	sortby	query	string	false	"Sorted-by fields. e.g. col1,col2 ..."
+// @Param	order	query	string	false	"Order corresponding to each sortby field, if single value, apply to all sortby fields. e.g. desc,asc ..."
+// @Param	limit	query	string	false	"Limit the size of result set. Must be an integer"
+// @Param	offset	query	string	false	"Start position of result set. Must be an integer"
+// @Success 200 {object} models.StudentSubjectChoices
+// @Failure 403
+// @router / [get]
+func (c *SubjectChoiceAllController) GetAll() {
+	var fields []string
+	var sortby []string
+	var order []string
+	var query = make(map[string]string)
+	var limit int64 = 10
+	var offset int64
+
+	// fields: col1,col2,entity.col3
+	if v := c.GetString("fields"); v != "" {
+		fields = strings.Split(v, ",")
+	}
+	// limit: 10 (default is 10)
+	if v, err := c.GetInt64("limit"); err == nil {
+		limit = v
+	}
+	// offset: 0 (default is 0)
+	if v, err := c.GetInt64("offset"); err == nil {
+		offset = v
+	}
+	// sortby: col1,col2
+	if v := c.GetString("sortby"); v != "" {
+		sortby = strings.Split(v, ",")
+	}
+	// order: desc,asc
+	if v := c.GetString("order"); v != "" {
+		order = strings.Split(v, ",")
+	}
+	// query: k:v,k:v
+	if v := c.GetString("query"); v != "" {
+		for _, cond := range strings.Split(v, ",") {
+			kv := strings.SplitN(cond, ":", 2)
+			if len(kv) != 2 {
+				c.Data["json"] = errors.New("Error: invalid query key/value pair")
+				c.ServeJSON()
+				return
+			}
+			k, v := kv[0], kv[1]
+			query[k] = v
+		}
+	}
+
+	l, err := models.GetAllSubjectChoices(query, fields, sortby, order, offset, limit)
+	if err != nil {
+		c.Data["json"] = err.Error()
+	} else {
+		c.Data["json"] = l
+	}
+	c.ServeJSON()
+}
+
+type SubjectDeleteController struct{
 	beego.Controller
 }
-// @Title GetAll
-// @Description get all SubjectsChoice
-// @Success 200 {object} models.StudentSubjectChoices
-// @router / [get]
-func(nn *SubjectsCAllController) Get(){
-	subjectsC := &models.StudentSubjectChoices{}
-	n := subjectsC.GetAllSubjectChoices()
-	nn.Data["json"] = n
-	nn.ServeJSON()
+// @Title Delete
+// @Description delete the Subjects
+// @Param	Subid		path 	string	true		"The Subid you want to delete"
+// @Success 200 {string} delete success!
+// @Failure 403 Subid is empty
+// @router /:Subid [delete]
+func (this *SubjectDeleteController) Delete(){
+	o := orm.NewOrm()
+	Subid, _ := strconv.Atoi(this.Ctx.Input.Param(":Subid"))
+			SubjectsD := &models.Subjects{Subid:Subid}
+			
+			
+			if num, err := o.Delete(SubjectsD); err == nil {
+				fmt.Println(num)
+				fmt.Println(num)
+				this.Data["json"] = "Deleted"
+			}
+	
+		this.ServeJSON()
+
+}
+
+type SubjectEditController struct{
+	beego.Controller
+}
+// @Title Update
+// @Description update the 
+// @Param	Subid		path 	string	true		"The Subid you want to update"
+// @Param	body		body 	models.Subid	true		"body for Department content"
+// @Success 200 {Subid} models.Subid
+// @Failure 403 :Subid is not int
+// @router /:Subid [put]
+func (this *SubjectEditController) Put(){
+	o := orm.NewOrm()
+	Subid,_ := strconv.Atoi(this.Ctx.Input.Param(":Subid"))
+	var nd models.Subjects
+
+	json.Unmarshal(this.Ctx.Input.RequestBody, &nd)
+
+	nn := models.Subjects{Subid: Subid}
+		if o.Read(&nn) == nil {
+	
+			nn.SubjectCode = nd.SubjectCode
+			nn.SubjectName = nd.SubjectName
+			nn.Course = nd.Course
+			nn.Semester = nd.Semester
+			nn.Compulsory = nd.Compulsory
+				if num, err := o.Update(&nn); err == nil {
+					fmt.Println(num)
+					this.Data["json"] = "Updated"
+				}
+		}
+	this.ServeJSON()	
+}
+
+type SubjectChoiceDeleteController struct{
+	beego.Controller
+}
+
+// @Title Delete
+// @Description delete the SubjectChoice
+// @Param	Scid		path 	string	true		"The Scid you want to delete"
+// @Success 200 {string} delete success!
+// @Failure 403 Scid is empty
+// @router /:Scid [delete]
+func (this *SubjectChoiceDeleteController) Delete(){
+	o := orm.NewOrm()
+	Scid, _ := strconv.Atoi(this.Ctx.Input.Param(":Scid"))
+			SubjectChoicesD := &models.StudentSubjectChoices{Scid:Scid}
+			
+			
+			if num, err := o.Delete(SubjectChoicesD); err == nil {
+				fmt.Println(num)
+				fmt.Println(num)
+				this.Data["json"] = "Deleted"
+			}
+	
+		this.ServeJSON()
+
 }
 

@@ -11,6 +11,246 @@ info:
     url: http://www.apache.org/licenses/LICENSE-2.0.html
 basePath: /api/v1
 paths:
+  /ContractDelete/{Cid}:
+    delete:
+      tags:
+      - ContractDelete
+      description: delete the ContractType
+      operationId: ContractDeleteController.Delete
+      parameters:
+      - in: path
+        name: Cid
+        description: The Cid you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: Cid is empty
+  /ContractEdit/{Cid}:
+    put:
+      tags:
+      - ContractEdit
+      description: update the ContractType
+      operationId: ContractEditController.Update
+      parameters:
+      - in: path
+        name: Cid
+        description: The Cid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for BookSection content
+        required: true
+        schema:
+          $ref: '#/definitions/models.ContractType'
+      responses:
+        "200":
+          description: '{Cid} models.ContractType'
+        "403":
+          description: :Cid is not int
+  /CourseDelete/{Cid}:
+    delete:
+      tags:
+      - CourseDelete
+      description: delete the Course
+      operationId: CourseDeleteController.Delete
+      parameters:
+      - in: path
+        name: Cid
+        description: The Cid you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: Cid is empty
+  /CourseEdit/{Cid}:
+    put:
+      tags:
+      - CourseEdit
+      description: update the
+      operationId: CourseEditController.Update
+      parameters:
+      - in: path
+        name: Cid
+        description: The Cid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Department content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Course'
+      responses:
+        "200":
+          description: '{Cid} models.Course'
+        "403":
+          description: :Cid is not int
+  /DeleteSection/{Bsid}:
+    delete:
+      tags:
+      - DeleteSection
+      description: delete the BookSection
+      operationId: BookSectionDeleteController.Delete
+      parameters:
+      - in: path
+        name: Bsid
+        description: The Bsid you want to get the BookSection
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: Bsid is empty
+  /DepartmentDelete/{Depid}:
+    delete:
+      tags:
+      - DepartmentDelete
+      description: delete the Department
+      operationId: DepartmentDeleteController.Delete
+      parameters:
+      - in: path
+        name: Depid
+        description: The Depid you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: Depid is empty
+  /DepartmentEdit/{Depid}:
+    put:
+      tags:
+      - DepartmentEdit
+      description: update the
+      operationId: DepartmentEditController.Update
+      parameters:
+      - in: path
+        name: Bsid
+        description: The Depid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Department content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Department'
+      responses:
+        "200":
+          description: '{Depid} models.Department'
+        "403":
+          description: :Depid is not int
+  /DesignationDelete/{Dsid}:
+    delete:
+      tags:
+      - DesignationDelete
+      description: delete the Designation
+      operationId: DesignationDeleteController.Delete
+      parameters:
+      - in: path
+        name: Dsid
+        description: The Dsid you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: Dsid is empty
+  /DesignationEdit/{Dsid}:
+    put:
+      tags:
+      - DesignationEdit
+      description: update the Designation
+      operationId: DesignationEditController.Update
+      parameters:
+      - in: path
+        name: Dsid
+        description: The Dsid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Designation content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Designation'
+      responses:
+        "200":
+          description: '{Dsid} models.Designation'
+        "403":
+          description: :Dsid is not int
+  /DivisionDelete/{Did}:
+    delete:
+      tags:
+      - DivisionDelete
+      description: delete the Division
+      operationId: DivisionDeleteController.Delete
+      parameters:
+      - in: path
+        name: Did
+        description: The Did you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: Did is empty
+  /DivisionEdit/{Did}:
+    put:
+      tags:
+      - DivisionEdit
+      description: update the
+      operationId: DivisionEditController.Update
+      parameters:
+      - in: path
+        name: Did
+        description: The Did you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Department content
+        required: true
+        schema:
+          $ref: '#/definitions/models.Division'
+      responses:
+        "200":
+          description: '{Did} models.Division'
+        "403":
+          description: :Did is not int
+  /EditSection/{Bsid}:
+    put:
+      tags:
+      - EditSection
+      description: update the BookSection
+      operationId: BookSectionEditController.Update
+      parameters:
+      - in: path
+        name: Bsid
+        description: The Bsid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for BookSection content
+        required: true
+        schema:
+          $ref: '#/definitions/models.BookSection'
+      responses:
+        "200":
+          description: '{Bsid} models.BookSection'
+        "403":
+          description: :Bsid is not int
   /Login/:
     post:
       tags:
@@ -47,6 +287,46 @@ paths:
           description: '{int} models.Users'
         "403":
           description: body is empty
+  /SubjectDelete/{Subid}:
+    delete:
+      tags:
+      - SubjectDelete
+      description: delete the Subjects
+      operationId: SubjectDeleteController.Delete
+      parameters:
+      - in: path
+        name: Subid
+        description: The Subid you want to delete
+        required: true
+        type: string
+      responses:
+        "200":
+          description: '{string} delete success!'
+        "403":
+          description: Subid is empty
+  /SubjectEdit/{Subid}:
+    put:
+      tags:
+      - SubjectEdit
+      description: update the
+      operationId: SubjectEditController.Update
+      parameters:
+      - in: path
+        name: Subid
+        description: The Subid you want to update
+        required: true
+        type: string
+      - in: body
+        name: body
+        description: body for Department content
+        required: true
+        schema:
+          $ref: '#/definitions/.Subid'
+      responses:
+        "200":
+          description: '{Subid} models.Subid'
+        "403":
+          description: :Subid is not int
   /addContractType/:
     post:
       tags:
@@ -694,13 +974,41 @@ paths:
     get:
       tags:
       - getsubjectchoice
-      description: get all SubjectsChoice
-      operationId: SubjectsCAllController.GetAll
+      description: get SubjectChoices
+      operationId: SubjectChoiceAllController.Get All
+      parameters:
+      - in: query
+        name: query
+        description: Filter. e.g. col1:v1,col2:v2 ...
+        type: string
+      - in: query
+        name: fields
+        description: Fields returned. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: sortby
+        description: Sorted-by fields. e.g. col1,col2 ...
+        type: string
+      - in: query
+        name: order
+        description: Order corresponding to each sortby field, if single value, apply
+          to all sortby fields. e.g. desc,asc ...
+        type: string
+      - in: query
+        name: limit
+        description: Limit the size of result set. Must be an integer
+        type: string
+      - in: query
+        name: offset
+        description: Start position of result set. Must be an integer
+        type: string
       responses:
         "200":
           description: ""
           schema:
             $ref: '#/definitions/models.StudentSubjectChoices'
+        "403":
+          description: ""
   /newnotice/:
     post:
       tags:
@@ -1182,6 +1490,8 @@ paths:
         "403":
           description: body is empty
 definitions:
+  .Subid:
+    type: object
   models.Allocation:
     title: Allocation
     type: object

@@ -350,6 +350,63 @@ func(cc *CourseAllController) Get(){
 	cc.ServeJSON()
 }
 
+type CourseDeleteController struct{
+	beego.Controller
+}
+// @Title Delete
+// @Description delete the Course
+// @Param	Cid		path 	string	true		"The Cid you want to delete"
+// @Success 200 {string} delete success!
+// @Failure 403 Cid is empty
+// @router /:Cid [delete]
+func (this *CourseDeleteController) Delete(){
+	o := orm.NewOrm()
+	Cid, _ := strconv.Atoi(this.Ctx.Input.Param(":Cid"))
+			CourseD := &models.Course{Cid:Cid}
+			
+			
+			if num, err := o.Delete(CourseD); err == nil {
+				fmt.Println(num)
+				fmt.Println(num)
+				this.Data["json"] = "Deleted"
+			}
+	
+		this.ServeJSON()
+
+}
+
+type CourseEditController struct{
+	beego.Controller
+}
+// @Title Update
+// @Description update the 
+// @Param	Cid		path 	string	true		"The Cid you want to update"
+// @Param	body		body 	models.Course	true		"body for Department content"
+// @Success 200 {Cid} models.Course
+// @Failure 403 :Cid is not int
+// @router /:Cid [put]
+func (this *CourseEditController) Put(){
+	o := orm.NewOrm()
+	Cid,_ := strconv.Atoi(this.Ctx.Input.Param(":Cid"))
+	var nd models.Course
+
+	json.Unmarshal(this.Ctx.Input.RequestBody, &nd)
+
+	nn := models.Course{Cid: Cid}
+		if o.Read(&nn) == nil {
+	
+			nn.CourseShortName = nd.CourseShortName
+			nn.CourseFullName = nd.CourseFullName
+			nn.CourseType = nd.CourseType
+			nn.RollPrefix = nd.RollPrefix
+				if num, err := o.Update(&nn); err == nil {
+					fmt.Println(num)
+					this.Data["json"] = "Updated"
+				}
+		}
+	this.ServeJSON()	
+}
+
 
 type DivisionController struct{
 	beego.Controller
@@ -418,4 +475,60 @@ func (s *DivisionViewController) Get(){
 	s.Data["json"] = ret
 	s.ServeJSON()
 
+}
+
+type DivisionDeleteController struct{
+	beego.Controller
+}
+// @Title Delete
+// @Description delete the Division
+// @Param	Did		path 	string	true		"The Did you want to delete"
+// @Success 200 {string} delete success!
+// @Failure 403 Did is empty
+// @router /:Did [delete]
+func (this *DivisionDeleteController) Delete(){
+	o := orm.NewOrm()
+	Did, _ := strconv.Atoi(this.Ctx.Input.Param(":Did"))
+			DivisionD := &models.Division{Did:Did}
+			
+			
+			if num, err := o.Delete(DivisionD); err == nil {
+				fmt.Println(num)
+				fmt.Println(num)
+				this.Data["json"] = "Deleted"
+			}
+	
+		this.ServeJSON()
+
+}
+
+type DivisionEditController struct{
+	beego.Controller
+}
+// @Title Update
+// @Description update the 
+// @Param	Did		path 	string	true		"The Did you want to update"
+// @Param	body		body 	models.Division	true		"body for Department content"
+// @Success 200 {Did} models.Division
+// @Failure 403 :Did is not int
+// @router /:Did [put]
+func (this *DivisionEditController) Put(){
+	o := orm.NewOrm()
+	Did,_ := strconv.Atoi(this.Ctx.Input.Param(":Did"))
+	var nd models.Division
+
+	json.Unmarshal(this.Ctx.Input.RequestBody, &nd)
+
+	nn := models.Division{Did: Did}
+		if o.Read(&nn) == nil {
+	
+			nn.DivisionName = nd.DivisionName
+			nn.Course = nd.Course
+			nn.YearClass = nd.YearClass
+				if num, err := o.Update(&nn); err == nil {
+					fmt.Println(num)
+					this.Data["json"] = "Updated"
+				}
+		}
+	this.ServeJSON()	
 }

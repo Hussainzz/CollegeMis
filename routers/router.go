@@ -72,6 +72,17 @@ func init() {
 				&controllers.CourseAllController{},
 			),
 		),
+
+		beego.NSNamespace("/CourseDelete",
+			beego.NSInclude(
+				&controllers.CourseDeleteController{},
+			),
+		),
+		beego.NSNamespace("/CourseEdit",
+			beego.NSInclude(
+				&controllers.CourseEditController{},
+			),
+		),
 		beego.NSNamespace("/adddivision",
 			beego.NSInclude(
 				&controllers.DivisionController{},
@@ -80,6 +91,16 @@ func init() {
 		beego.NSNamespace("/getdivision",
 			beego.NSInclude(
 				&controllers.DivisionAllController{},
+			),
+		),
+		beego.NSNamespace("/DivisionDelete",
+			beego.NSInclude(
+				&controllers.DivisionDeleteController{},
+			),
+		),
+		beego.NSNamespace("/DivisionEdit",
+			beego.NSInclude(
+				&controllers.DivisionEditController{},
 			),
 		),
 
@@ -105,11 +126,27 @@ func init() {
 				&controllers.SubjectsAllController{},
 			),
 		),
-	
 		beego.NSNamespace("/getsubjectchoice",
 			beego.NSInclude(
-					&controllers.SubjectsCAllController{},
-			),	
+				&controllers.SubjectChoiceAllController{},
+			),
+		),
+
+
+		beego.NSNamespace("/SubjectDelete",
+			beego.NSInclude(
+				&controllers.SubjectDeleteController{},
+			),
+		),
+		beego.NSNamespace("/SubjectEdit",
+			beego.NSInclude(
+				&controllers.SubjectEditController{},
+			),
+		),
+		beego.NSNamespace("/SubjectChoiceDelete",
+			beego.NSInclude(
+				&controllers.SubjectChoiceDeleteController{},
+			),
 		),
 
 
@@ -163,6 +200,7 @@ func init() {
 				&controllers.ContractTypeAllController{},
 			),
 		),
+
 		beego.NSNamespace("/getDesignation",
 			beego.NSInclude(
 				&controllers.DesignationAllController{},
@@ -173,6 +211,40 @@ func init() {
 				&controllers.DepartmentAllController{},
 			),
 		),
+
+		beego.NSNamespace("/DesignationDelete",
+			beego.NSInclude(
+				&controllers.DesignationDeleteController{},
+			),
+		),
+		beego.NSNamespace("/DesignationEdit",
+			beego.NSInclude(
+				&controllers.DesignationEditController{},
+			),
+		),
+
+		beego.NSNamespace("/ContractDelete",
+			beego.NSInclude(
+				&controllers.ContractDeleteController{},
+			),
+		),
+		beego.NSNamespace("/ContractEdit",
+			beego.NSInclude(
+				&controllers.ContractEditController{},
+			),
+		),
+		beego.NSNamespace("/DepartmentDelete",
+			beego.NSInclude(
+				&controllers.DepartmentDeleteController{},
+			),
+		),
+		beego.NSNamespace("/DepartmentEdit",
+			beego.NSInclude(
+				&controllers.DepartmentEditController{},
+			),
+		),
+		
+		
 
 		beego.NSNamespace("/newnotice",
 			beego.NSInclude(
@@ -314,6 +386,19 @@ func init() {
 				&controllers.BookSectionSController{},
 			),
 		),
+		beego.NSNamespace("/DeleteSection",
+			beego.NSInclude(
+				&controllers.BookSectionDeleteController{},
+			),
+		),
+		beego.NSNamespace("/EditSection",
+			beego.NSInclude(
+				&controllers.BookSectionEditController{},
+			),
+		),
+		
+		
+
 		beego.NSNamespace("/addbook",
 			beego.NSInclude(
 				&controllers.BookController{},

@@ -17,7 +17,7 @@ func init() {
 	  }))	
 	
 	  orm.RegisterDriver("mysql", orm.DRMySQL)
-	  orm.RegisterDataBase("default",  "mysql",  "root:admin@/misapi?charset=utf8")
+	  orm.RegisterDataBase("default",  "mysql",  "root:@/test?charset=utf8")
 	  name := "default"
 	  force := false
 	  verbose := false

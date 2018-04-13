@@ -6,6 +6,9 @@ import (
 	"CollegeMis/models"
 	"strings"
 	"errors"
+	"github.com/astaxie/beego/orm"
+	"strconv"
+	"fmt"
 )
 
 type BookSectionController struct{
@@ -99,4 +102,58 @@ func (c *BookSectionSController) GetAll() {
 		c.Data["json"] = l
 	}
 	c.ServeJSON()
+}
+
+type BookSectionDeleteController struct{
+	beego.Controller
+}
+// @Title Delete
+// @Description delete the BookSection
+// @Param	Bsid		path 	string	true		"The Bsid you want to get the BookSection"
+// @Success 200 {string} delete success!
+// @Failure 403 Bsid is empty
+// @router /:Bsid [delete]
+func (this *BookSectionDeleteController) Delete(){
+	o := orm.NewOrm()
+	Bsid, _ := strconv.Atoi(this.Ctx.Input.Param(":Bsid"))
+			bookSectionD := &models.BookSection{Bsid:Bsid}
+			
+			
+			if num, err := o.Delete(bookSectionD); err == nil {
+				fmt.Println(num)
+				fmt.Println(num)
+				this.Data["json"] = "Deleted"
+			}
+	
+		this.ServeJSON()
+
+}
+
+type BookSectionEditController struct{
+	beego.Controller
+}
+// @Title Update
+// @Description update the BookSection
+// @Param	Bsid		path 	string	true		"The Bsid you want to update"
+// @Param	body		body 	models.BookSection	true		"body for BookSection content"
+// @Success 200 {Bsid} models.BookSection
+// @Failure 403 :Bsid is not int
+// @router /:Bsid [put]
+func (this *BookSectionEditController) Put(){
+	o := orm.NewOrm()
+	Bsid,_ := strconv.Atoi(this.Ctx.Input.Param(":Bsid"))
+	var nd models.BookSection
+
+	json.Unmarshal(this.Ctx.Input.RequestBody, &nd)
+
+	nn := models.BookSection{Bsid: Bsid}
+		if o.Read(&nn) == nil {
+	
+			nn.SectionName = nd.SectionName
+				if num, err := o.Update(&nn); err == nil {
+					fmt.Println(num)
+					this.Data["json"] = "Updated"
+				}
+		}
+	this.ServeJSON()	
 }
